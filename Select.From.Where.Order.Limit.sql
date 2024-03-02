@@ -26,10 +26,22 @@ Limit
 */
 
 Select name as Participant,major as Profession,score as Performance from student
-where score >=75 and score <=90
-order by score desc
+where score >=75 and score <=90 /*Filter*/
+order by score desc /*降序*/
 limit 2 ; /*限制2筆資料*/
 
+/*
+where major ='英文' or major = '國文'
+等同於
+where major in ('英文','國文')
+*/
+
+/*
+where name = '小文'
+where not name = '小文'
+where name like '小%' (模糊搜索)
+where name like '%紅%' (模糊搜索)
+*/
 
 
 
