@@ -22,3 +22,5 @@ CREATE TABLE IF NOT EXISTS city(
 
 SELECT * FROM city;
 
+CREATE DATABASE dvdrental;
+
