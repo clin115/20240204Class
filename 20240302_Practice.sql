@@ -1,0 +1,1 @@
+Select now() as 現在時辰
