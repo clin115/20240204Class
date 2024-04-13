@@ -9,14 +9,16 @@ def get_contacts() -> list:
     with psycopg2.connect(os.environ['POSTGRE_PASSWORD']) as conn:
         with conn.cursor() as cursor:
             sql='''
-                SELECT Contact_ID,Customer_Name,Contact_Name,Phone,Email
+                SELECT Contact_Name
                 FROM Contact_List LEFT JOIN Customer_List ON Contact_List.Customer_ID = Customer_List.Customer_ID
                 '''
             cursor.execute(sql)
             datas:list = cursor.fetchmany(10)
-            contacts = []
+            names = []
             for item in datas:
-                contacts.append({'id':item[0],'客戶名稱':item[1],'姓名':item[2],'電話':item[3],'電郵':item[4]})
-            return contacts
-source_data = get_contacts()
-st.dataframe(source_data,width=1500)
+                names.append(item[0])
+            return names            
+with st.sidebar:
+    option = st.selectbox(
+    "Specify your contact:",get_contacts())
+    st.write('You have selected ',option)
