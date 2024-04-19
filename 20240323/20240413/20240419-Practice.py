@@ -26,10 +26,10 @@ with st.sidebar:
     T1 = st.date_input("Date of Departure")
     T2 = st.date_input("Date of Return")
     st.write(
-        'Your Honor, you are travelling from',
+        'Your Honor, you are traveling from',
         option1,'to',option2,
-        'from',T1,"to",T2, 
+        'from',T1,"and will return on",T2, 
         'Is that correct?' )
     if st.button('Click here to confirm your orders',type="primary"):
-        st.write("Your order has been confirmed. Just go and check your Email!!")
+        st.write("Your order has been confirmed. Just go and check your Email !!")
     
